@@ -1,17 +1,20 @@
 ---
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: whoami-ingress
   namespace: {{ .Values.namespace }}
 spec:
-  entryPoints:
-    - websecure
-  routes:
-  - match: Host(`{{ .Values.hostname }}.{{ .Values.tld }}`) && PathPrefix(`/whoami`)
-    kind: Rule
-    services:
-    - name: whoami
-      port: 80
-  tls:
-    certResolver: default
+  ingressClassName: internal
+  rules:
+  - host: "{{ .Values.hostname }}.{{ .Values.tld }}"
+    http:
+      paths:
+      ## Path ⌄⌄⌄⌄⌄⌄⌄
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: whoami
+            port:
+              number: 80
