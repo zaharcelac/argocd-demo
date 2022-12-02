@@ -23,6 +23,9 @@ spec:
           ports:
             - name: web
               containerPort: 80
+          env:
+          - name: WHOAMI_NAME
+            value: my_whoami
           readinessProbe:
             httpGet:
               path: /health
