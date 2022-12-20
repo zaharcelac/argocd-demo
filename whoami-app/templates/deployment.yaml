@@ -26,6 +26,13 @@ spec:
           env:
           - name: WHOAMI_NAME
             value: {{ .Values.WHOAMI_NAME }}
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           readinessProbe:
             httpGet:
               path: /health
