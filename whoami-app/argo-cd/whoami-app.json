@@ -1,11 +1,6 @@
 {
     "metadata": {
-        "name": "whoami-app",
-        "namespace": "argocd",
-        "uid": "d981ea7e-d6f2-48ae-b535-18fa11b91da1",
-        "generation": 25,
-        "creationTimestamp": "2022-12-20T02:27:38Z",
-        "managedFields": []
+        "name": "whoami-app"
     },
     "spec": {
         "source": {
@@ -31,7 +26,5 @@
         },
         "project": "apps",
         "syncPolicy": {}
-    },
-    "status": {},
-    "operation": {}
+    }
 }
