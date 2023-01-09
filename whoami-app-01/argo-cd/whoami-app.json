@@ -1,0 +1,18 @@
+{
+    "metadata": {
+        "name": "whoami-application-01"
+    },
+    "spec": {
+        "source": {
+            "repoURL": "https://github.com/zaharcelac/argocd-demo",
+            "path": "whoami-app-01",
+            "targetRevision": "HEAD"
+        },
+        "destination": {
+            "server": "https://kubernetes.default.svc",
+            "namespace": "apps"
+        },
+        "project": "apps",
+        "syncPolicy": {}
+    }
+}

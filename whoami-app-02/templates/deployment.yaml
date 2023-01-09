@@ -1,0 +1,41 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: {{ .Values.namespace }}
+  name: whoami
+  labels:
+    app: whoami
+
+spec:
+  replicas: {{ .Values.REPLICAS_COUNT }}
+  selector:
+    matchLabels:
+      app: whoami
+  template:
+    metadata:
+      labels:
+        app: whoami
+    spec:
+      containers:
+        - name: whoami
+          image: containous/whoami
+          ports:
+            - name: web
+              containerPort: 80
+          env:
+          - name: WHOAMI_NAME
+            value: {{ .Values.WHOAMI_NAME }}
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: web
+            initialDelaySeconds: 5
+            periodSeconds: 5

@@ -1,0 +1,6 @@
+# FQDN
+tld: "scaffold-zcelac-us.dev.cld.touchtunes.com"
+hostname: "whoami-02"
+namespace: "apps"
+WHOAMI_NAME: "zcelac-whoami-two"
+REPLICAS_COUNT: "2"
