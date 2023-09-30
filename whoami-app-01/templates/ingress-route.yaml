@@ -5,7 +5,7 @@ metadata:
   name: {{ .Values.labels }}-ingress
   namespace: {{ .Values.namespace }}
 spec:
-  ingressClassName: internal
+  ingressClassName: private
   rules:
   - host: "{{ .Values.hostname }}.{{ .Values.tld }}"
     http:
