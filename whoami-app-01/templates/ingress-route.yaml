@@ -12,7 +12,7 @@ spec:
       paths:
       ## Path ⌄⌄⌄⌄⌄⌄⌄
       - path: /
-        pathType: ImplementationSpecific
+        pathType: Prefix
         backend:
           service:
             name: {{ .Values.labels }}
