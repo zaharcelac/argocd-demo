@@ -1,5 +1,5 @@
 # FQDN
-tld: "scaffold-zcelac-us.dev.cld.touchtunes.com"
+tld: "scaffold-workers-zcelac-us.dev.cld.touchtunes.com"
 hostname: "whoami-03"
 namespace: "apps"
 WHOAMI_NAME: "zcelac-whoami-three"
